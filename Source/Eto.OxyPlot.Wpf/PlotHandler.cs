@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Eto.Drawing;
+﻿using Eto.Drawing;
+using Eto.Forms;
 using Eto.Wpf;
 using Eto.Wpf.Forms;
 using OxyPlot;
@@ -11,12 +7,19 @@ using OxyPlot.Wpf;
 
 namespace Eto.OxyPlot.Wpf
 {
-    public class PlotHandler : WpfFrameworkElement<PlotView, Plot, Plot.ICallback>, Plot.IHandler
+    public class PlotHandler : WpfFrameworkElement<PlotView, Plot, Control.ICallback>, Plot.IHandler
     {
+        
         public override Color BackgroundColor
         {
-            get { return Control.PlotAreaBackground.ToEtoColor(); }
-            set { Control.PlotAreaBackground = value.ToWpfBrush(Control.PlotAreaBackground); }
+            get
+            {
+                return Control.Background.ToEtoColor();
+            }
+            set
+            {
+                Control.Background = value.ToWpfBrush(Control.Background);
+            }
         }
 
         public PlotModel Model
