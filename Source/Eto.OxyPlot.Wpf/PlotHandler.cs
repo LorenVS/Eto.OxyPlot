@@ -30,9 +30,7 @@ namespace Eto.OxyPlot.Wpf
 
         public PlotHandler()
         {
-            Control = new global::OxyPlot.Wpf.PlotView()
-            {
-            };
+            Control = new PlotView() { };
         }
     }
 }
